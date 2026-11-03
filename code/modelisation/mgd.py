@@ -43,10 +43,3 @@ def mgd_Xp(mat):
 def mgd_Xr(mat):
     return mat[0:3, 0:3]
 
-q_test = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-T = mgd(q_test)
-Xp = mgd_Xp(T)
-Xr = mgd_Xr(T)
-
-print(Xp)
-print(Xr)
