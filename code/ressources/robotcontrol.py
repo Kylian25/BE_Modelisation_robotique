@@ -18,7 +18,7 @@ def simulation(steps, sleep_time=0.0001):
      for _ in range(steps):
          p.stepSimulation()
          time.sleep(sleep_time)
-
+    
 ########################################################################        
 def check_joint_equality(q1, q2, eps):
     """
