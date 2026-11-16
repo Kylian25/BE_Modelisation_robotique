@@ -8,7 +8,7 @@ Created on Tue Nov  4 14:48:07 2025
 import numpy as np
 import pybullet as p
 import time
-import affiche
+from ressources import affiche
   
 F_CONTROL = 10000
 sleep_time = 1/F_CONTROL 
@@ -18,7 +18,7 @@ def simulation(steps, sleep_time=0.0001):
      for _ in range(steps):
          p.stepSimulation()
          time.sleep(sleep_time)
-
+    
 ########################################################################        
 def check_joint_equality(q1, q2, eps):
     """
