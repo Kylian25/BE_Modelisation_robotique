@@ -1,20 +1,15 @@
 import numpy as np
 
 ALPHA_I = [0, -np.pi/2, 0, np.pi/2, -np.pi/2, np.pi/2]
-A_I = [0, 0, 400, 0, 0, 0]
-R_I = [375, 0, 20, 450, 0, 70]
+A_I = [0, 0, 0.400, 0, 0, 0]
+R_I = [0.375, 0, 0.020, 0.450, 0, 0.070]
 OFFSET_I = [0, -np.pi/2, np.pi/2, 0, 0, 0]
-T_OUTIL = np.array([
-    [ 0,  0, -1,  0],
-    [ 0,  1,  0,  0],
-    [ 1,  0,  0,  0],
-    [ 0,  0,  0,  1]
-])
 
-def mgd(q):
+
+def mgd(q , i = 0 , j = 6):
     mat = np.eye(4)
 
-    for i in range(6):
+    for i in range(i,j):
         th = q[i] + OFFSET_I[i]
         r = R_I[i]
         a = A_I[i]
@@ -33,8 +28,6 @@ def mgd(q):
 
         mat = np.dot(mat, mat_i)
 
-    mat = np.dot(mat, T_OUTIL)
-    
     return mat
 
 def mgd_Xp(mat):
